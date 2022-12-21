@@ -12,20 +12,15 @@ public:
     virtual ~Buffer();
 };
 
-
-#include <vector>
-#include <string>
-
-using namespace std;
-
-class LimitedBuffer : public Buffer {
+// Task 4(a).  Declare the class LimitedBuffer, by extending Buffer
+// Write your code here
+class LimitedBuffer: public Buffer {
 private:
-    unsigned int occupancyValue;
-    unsigned int maxSize;
+    vector<int> data;
     int defaultValue;
-    vector<int> buffer;
+    unsigned int maxElements;
 public:
-    LimitedBuffer(unsigned int size, int defaultValue);
+    LimitedBuffer(unsigned int maxElements, int defaultValue);
     void write(int v);
     int read();
     unsigned int occupancy();

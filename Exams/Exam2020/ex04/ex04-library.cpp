@@ -1,13 +1,30 @@
 #include "ex04-library.h"
+#include <iostream>
 
-// Task 4(a).  Write a placeholder implementation of LimitedBuffer's
-//             constructor and methods
+LimitedBuffer::LimitedBuffer(unsigned int maxSize, int defaultValue) {
+    this->maxSize = maxSize;
+    this->defaultValue = defaultValue;
+    this->occupancyValue = 0;
+}
 
-// Task 4(b).  Write a working implementation of write() and occupancy()
+void LimitedBuffer::write(int v) {
+    if(occupancy() < this->maxSize){
+        this->buffer.push_back(v);
+    }
+}
 
-// Task 4(c).  Write a working implementation of read()
+int LimitedBuffer::read() {
+    if (this->buffer.size() == 0) {
+        return this->defaultValue;
+    }
+    int v = this->buffer[0];
+    this->buffer.erase(this->buffer.begin());
+    return v;
+}
 
-// Do not modify
+unsigned int LimitedBuffer::occupancy() {
+    return buffer.size();
+}
 Buffer::~Buffer() {
     // Empty destructor
 }

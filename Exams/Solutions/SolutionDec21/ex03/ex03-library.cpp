@@ -22,15 +22,18 @@ SongDatabase::SongDatabase() {
 
 // Task 3(a).  Implement this method
 void SongDatabase::display() {
-    for (auto song : this->songs) {
-        cout << "title=" << song << "; ";
-        cout << "url=" << this->songsInfo[song].url << "; ";
-        cout << "score=" << this->songsInfo[song].score << endl;
+    // Write your code here
+    for (auto it = this->songs.begin(); it != this->songs.end(); it++) {
+        Info &info = this->songsInfo[*it];
+        cout << "title=" << *it << "; ";
+        cout << "url=" << info.url << "; ";
+        cout << "score=" << info.score << endl;
     }
 }
 
 // Task 3(b).  Implement this method
 bool SongDatabase::addSong(string title, string url, unsigned int score) {
+    // Write your code here
     if (score > 10) {
         return false;
     }
@@ -43,9 +46,11 @@ bool SongDatabase::addSong(string title, string url, unsigned int score) {
     this->songsInfo[title] = {url, score};
     return true;
 }
+
 // Task 3(a).  Implement this method
 void SongDatabase::searchSongs(string howGood) {
-    for(auto it = songs.begin(); it != songs.end(); it++) {
+    // Write your code here
+    for (auto it = this->songs.begin(); it != this->songs.end(); it++) {
         Info &info = this->songsInfo[*it];
         if (((howGood == "abysmal") && (info.score < 3)) ||
             ((howGood == "lousy") && (info.score >= 3) && (info.score < 5)) ||
@@ -57,5 +62,4 @@ void SongDatabase::searchSongs(string howGood) {
                 cout << "score=" << info.score << endl;
         }
     }
-
 }

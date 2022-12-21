@@ -5,11 +5,11 @@ using namespace std;
 
 //Exercise 1 (a) Check and correct if necessary
 double * createAndInitArray(unsigned int n, double value){
-	double *A = new double[n];
-	for(unsigned int i = 0; i<=n; i++){
-		A[i] = value;
+	double *arr = new double[n];
+	for(unsigned int i = 0; i < n; i++){
+		arr[i] = value;
 	}
-	return A;
+	return arr;
 }
 
 //Exercise 1 (b) Implement this function

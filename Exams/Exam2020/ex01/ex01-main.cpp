@@ -1,5 +1,6 @@
 #include <iostream>
 #include "ex01-library.h"
+#include "ex01-library.cpp"
 using namespace std;
 
 int main() {
