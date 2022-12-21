@@ -11,6 +11,7 @@ Elem* reverse(Elem *list) {
         newElem->times = list->times;
         newElem->next = newList;
         newList = newElem;
+        
         list = list->next;
     }
     return newList;

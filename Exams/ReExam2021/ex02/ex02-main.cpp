@@ -1,5 +1,7 @@
 #include <iostream>
 #include "ex02-library.h"
+#include "ex02-library.cpp"
+
 using namespace std;
 
 int main() {
@@ -10,7 +12,7 @@ int main() {
     Elem e4 = {100, 7, nullptr};
     Elem e5 = {4,   3, &e4};
     Elem e6 = {101, 9, &e5};
-    
+
     cout << "The RLE list is: " << endl;
     displayRLEList(&e2);
     cout << endl;
@@ -27,6 +29,6 @@ int main() {
     cout << endl;
 
     cout << "The sum of its elements is: " << sum(l) << endl;
-    
+
     return 0;
 }
